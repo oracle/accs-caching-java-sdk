@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ File: pom.xml
+
+ Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+
+ You may not use this file except in compliance with the Universal Permissive
+ License (UPL), Version 1.0 (the "License.")
+
+ You may obtain a copy of the License at https://opensource.org/licenses/UPL.
+
+ Unless required by applicable law or agreed to in writing, software distributed
+ under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ CONDITIONS OF ANY KIND, either express or implied.
+
+ See the License for the specific language governing permissions and limitations
+ under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>project</artifactId>
+        <groupId>com.oracle.cloud.caching</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>cache-client-api</artifactId>
+
+    <name>ACCS Application Cache Java Client API</name>
+
+    <description>
+        A Java Client API to access ACCS Application Cache.
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.oracle.cloud.caching</groupId>
+            <artifactId>cache-client-protocol</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${metrics.version}</version>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <!-- shade for deployment to OTN -->
+        <profile>
+            <id>shade</id>
+            <build>
+                <plugins>
+                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>${maven.shade.plugin.version}</version>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                    <resource>LICENSES.TXT</resource>
+                                    <file>${project.basedir}/../LICENSES.TXT</file>
+                                </transformer>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                    <resource>LICENSE.md</resource>
+                                    <file>${project.basedir}/../LICENSE.md</file>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <!-- attach source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- attach javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven.javadoc.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

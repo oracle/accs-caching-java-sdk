@@ -1,0 +1,149 @@
+//
+// File: cache.proto
+//
+// Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
+//
+// You may not use this file except in compliance with the Universal Permissive
+// License (UPL), Version 1.0 (the "License.")
+//
+// You may obtain a copy of the License at https://opensource.org/licenses/UPL.
+//
+// Unless required by applicable law or agreed to in writing, software distributed
+// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+// CONDITIONS OF ANY KIND, either express or implied.
+//
+// See the License for the specific language governing permissions and limitations
+// under the License.
+//
+syntax = "proto3";
+package cloud.cache.basic;
+
+option java_package         = "com.oracle.cloud.cache.basic";
+option java_outer_classname = "CacheRpc";
+
+service Cache
+{
+    // Get the value for the specified key from the cache.
+    rpc Get(GetRequest) returns (GetResponse) {}
+
+    // Put the value for the specified key into the cache.
+    rpc Put(PutRequest) returns (PutResponse) {}
+
+    // Put the value for the specified key into the cache, if not already present.
+    rpc PutIfAbsent(PutRequest) returns (PutResponse) {}
+
+    // Replace the value for the specified key only if it is currently mapped to some value.
+    rpc Replace(ReplaceRequest) returns (ReplaceResponse) {}
+
+    // Replace the value for the specified key only if it is currently mapped to the specified value.
+    rpc ReplaceValue(ReplaceValueRequest) returns (ReplaceValueResponse) {}
+
+    // Remove the entry for the specified key.
+    rpc Remove(RemoveRequest) returns (RemoveResponse) {}
+
+    // Remove the entry for the specified key only if it is currently mapped to the specified value.
+    rpc RemoveValue(RemoveValueRequest) returns (RemoveValueResponse) {}
+
+    // Remove all entries from the specified cache.
+    rpc Clear(ClearRequest) returns (EmptyResponse) {}
+
+    // Return Metrics for the specified cache.
+    rpc GetMetrics(MetricsRequest) returns (MetricsResponse) {}
+}
+
+message GetRequest
+{
+    string cache = 1;
+    string key   = 2;
+}
+
+message GetResponse
+{
+    bytes value = 1;
+}
+
+message PutRequest
+{
+    string cache  = 1;
+    string key    = 2;
+    bytes  value  = 3;
+    int64  ttl    = 4;
+    bool   return = 5;
+}
+
+message PutResponse
+{
+    bytes value = 1;
+}
+
+message ReplaceRequest
+{
+    string cache  = 1;
+    string key    = 2;
+    bytes  value  = 3;
+    int64  ttl    = 4;
+    bool   return = 5;
+}
+
+message ReplaceResponse
+{
+    bytes value = 1;
+}
+
+message ReplaceValueRequest
+{
+    string cache    = 1;
+    string key      = 2;
+    bytes  oldValue = 3;
+    bytes  newValue = 4;
+    int64  ttl      = 5;
+}
+
+message ReplaceValueResponse
+{
+    bool success = 1;
+}
+
+message RemoveRequest
+{
+    string cache  = 1;
+    string key    = 2;
+    bool   return = 3;
+}
+
+message RemoveResponse
+{
+    bytes value = 1;
+}
+
+message RemoveValueRequest
+{
+    string cache    = 1;
+    string key      = 2;
+    bytes  oldValue = 3;
+}
+
+message RemoveValueResponse
+{
+    bool  success = 1;
+}
+
+message ClearRequest
+{
+    string cache = 1;
+}
+
+message EmptyResponse
+{
+}
+
+message MetricsRequest
+{
+    string cache = 1;
+}
+
+message MetricsResponse
+{
+    int64 count = 1;
+    int64 size  = 2;
+}

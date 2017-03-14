@@ -1,0 +1,45 @@
+# maven noise
+target/
+
+# gradle noise
+.gradle
+gradle/
+gradlew
+gradlew.bat
+
+# osx noise
+.DS_Store
+profile
+*.swp
+
+# IntelliJ Idea noise
+.idea
+*.iws
+*.ipr
+*.iml
+*.releaseBackup
+atlassian-ide-plugin.xml
+
+# NB noise
+nbactions.xml
+nb-configuration.xml
+
+# Eclipse noise
+.settings
+.settings/*
+.project
+.classpath
+
+# Maven plugins noise
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+.flattened-pom.xml
+
+dependency-reduced-pom.xml
+
+# Node related
+node_modules/
+
+# other
+*.class

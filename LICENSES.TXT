@@ -1,0 +1,13 @@
+Important Copyright and Licensing Information Regarding Certain Third Party
+Software Distributed with ACCS Application Cache Java API Project.
+
+This document contains links to the following products and licenses used within this project:
+
+1. GRPC 1.1.1
+    https://github.com/grpc/grpc-java/blob/master/LICENSE
+    
+2. Dropwizard Metrics 3.1.0
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+3. Jersey 2.22.1
+    https://jersey.java.net/license.html
