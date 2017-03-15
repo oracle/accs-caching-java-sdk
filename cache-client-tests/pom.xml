@@ -22,7 +22,7 @@
     <parent>
         <artifactId>project</artifactId>
         <groupId>com.oracle.cloud.caching</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>cache-client-tests</artifactId>

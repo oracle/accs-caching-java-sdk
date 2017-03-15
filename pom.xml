@@ -22,7 +22,7 @@
     <groupId>com.oracle.cloud.caching</groupId>
     <artifactId>project</artifactId>
 
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <packaging>pom</packaging>
 
@@ -59,7 +59,7 @@
         <connection>scm:git:https://github.com/oracle/accs-caching.git</connection>
         <developerConnection>scm:git:https://github.com/oracle/accs-caching.git</developerConnection>
         <url>https://github.com/oracle/accs-caching.git</url>
-        <tag>4.0.0</tag>
+        <tag>accs-caching-1.0.0</tag>
     </scm>
 
     <modules>
