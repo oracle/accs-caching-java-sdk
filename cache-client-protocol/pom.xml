@@ -30,7 +30,7 @@
     <name>ACCS Application Cache GRPC Support</name>
 
     <description>
-        GRPC and Google Protocol Buffers files for cache-client-api.
+        GRPC and Google Protocol Buffers files for Oracle Application Container Cloud Service (ACCS) Application Cache cache-client-api.
     </description>
 
     <dependencies>

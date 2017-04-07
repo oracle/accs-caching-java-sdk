@@ -30,7 +30,7 @@
     <name>ACCS Application Cache Java Client API Tests</name>
 
     <description>
-        Functional and integration tests for the cache-client-api.
+        Functional and integration tests for the Oracle Application Container Cloud Service (ACCS) Application Cache cache-client-api.
     </description>
 
     <dependencies>

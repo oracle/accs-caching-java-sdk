@@ -30,7 +30,7 @@
     <name>ACCS Application Cache Java Client API</name>
 
     <description>
-        A Java Client API to access ACCS Application Cache.
+        A Java Client API to access Oracle Application Container Cloud Service (ACCS) Application Cache.
     </description>
 
     <dependencies>

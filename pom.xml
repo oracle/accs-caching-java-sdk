@@ -29,7 +29,7 @@
     <name>ACCS Application Cache Java API Project</name>
 
     <description>
-        A Java Client API to access Application Container Cloud Service (ACCS) : Application Cache.
+        A Java Client API to access Oracle Application Container Cloud Service (ACCS) Application Cache.
     </description>
 
     <url>https://github.com/oracle/accs-caching/</url>
