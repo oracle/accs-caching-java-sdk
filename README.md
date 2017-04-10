@@ -26,13 +26,13 @@ Build the Java client by running these commands:
   - Clone the repository
 
    ```
-   git clone https://github.com/oracle/accs-caching.git
+   git clone https://github.com/oracle/accs-caching-java-sdk.git
    ```
 
   - Change to the directory
 
    ```
-   cd accs-caching
+   cd accs-caching-java-sdk
    ```
 
   - Build the client
