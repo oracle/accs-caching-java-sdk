@@ -3,6 +3,7 @@ package com.oracle.cloud.caching.example;
 import com.oracle.cloud.cache.basic.Cache;
 import com.oracle.cloud.cache.basic.Session;
 import com.oracle.cloud.cache.basic.options.Return;
+import com.oracle.cloud.cache.basic.options.ValueType;
 
 abstract class AbstractUserService {
 
@@ -12,7 +13,7 @@ abstract class AbstractUserService {
 	protected AbstractUserService() {
 		super();
 		cacheSession = initSession();
-		users = cacheSession.getCache("users");
+		users = cacheSession.getCache("users", ValueType.of(User.class));
 	}
 
 	abstract Session initSession();

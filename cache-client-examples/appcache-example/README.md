@@ -132,7 +132,7 @@ When I run this I get a 200 response with a JSON version of the created User obj
 
 Try the following (substituting the id of the User you just created) to update the created User's name and email (remember this is a *simple* example so it's not very sophisticated):
 
-    $ curl -i -X POST https://CacheDemo-paas104.apaas.em2.oraclecloud.com/users/74ca1448-73f3-41f5-bb11-fda54c9dff1f?name=luke\&email=luke@rebellion.org
+    $ curl -i -X PUT https://CacheDemo-paas104.apaas.em2.oraclecloud.com/users/74ca1448-73f3-41f5-bb11-fda54c9dff1f?name=luke\&email=luke@rebellion.org
 
 Output:
 
