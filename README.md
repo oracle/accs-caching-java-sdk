@@ -59,16 +59,12 @@ The directory ``cache-client-examples`` contains two sub-projects that show how 
 
 ### Deployable ACCS example
 
-The sub-directory ``cache-client-examples/appcache-example`` contains an example using the client API which can be deployed to ACCS.
-
-See the [example README](cache-client-examples/appcache-example/README.md) for full instructions on how to build and deploy this example.
+The sub-directory [``cache-client-examples/appcache-example``](cache-client-examples/appcache-example) contains an example using the client API which can be deployed to ACCS.
 
 ### LocalSessionProvider Example
 
-The sub-directory  ```cache-client-examples/local-session-provider-example``` contains an example showing how to use the
+The sub-directory  [``cache-client-examples/local-session-provider-example``](cache-client-examples/local-session-provider-example) contains an example showing how to use the
 the client API against a LocalSessionProvider without having to deploy to ACCS.
-
-See the [example README](cache-client-examples/local-session-provider-example/README.md) for full instructions on how to build and run this example.
 
 ## Referencing the API from Maven Projects
 
