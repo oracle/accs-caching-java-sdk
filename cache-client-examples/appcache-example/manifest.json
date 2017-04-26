@@ -2,7 +2,7 @@
   "runtime": {
       "majorVersion": "8"
   },
-  "command": "java -jar appcache-demo-1.0-jar-with-dependencies.jar",
+  "command": "java -jar appcache-example-1.0-jar-with-dependencies.jar",
   "release": {
     "version": "1.0.0"
   },

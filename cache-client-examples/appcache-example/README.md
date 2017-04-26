@@ -80,19 +80,19 @@ Enough background!  Let's get on with deploying the example and trying it out.
 
 3. Build the example and generate a deployable application archive
 
-   In the root folder of the cloned Git repository run `mvn clean package`.  This will generate a "fat" jar that contains both the example application code and all of the libraries the application depends on, including the Java client library.  The Maven build also generates an ACCS application archive file which packages the fat jar along with a manifest.json file.
+   In the cache-client-examples/appcache-example folder of the cloned Git repository run `mvn clean package`.  This will generate a "fat" jar that contains both the example application code and all of the libraries the application depends on, including the Java client library.  The Maven build also generates an ACCS application archive file which packages the fat jar along with a manifest.json file.
 
 4. Deploy the example to ACCS
 
-  1. Navigate to the ACCS Service console, click "Create Application", and choose Java SE for the runtime.
+ 1. Navigate to the ACCS Service console, click "Create Application", and choose Java SE for the runtime.
 
-  2. Provide an application name, choose "Upload", and select the application archive `appcache-example-1.0-dist.zip` from the Maven generated `target` folder.
+ 2. Provide an application name, choose "Upload", and select the application archive `appcache-example-1.0-dist.zip` from the Maven generated `target` folder.
 
-  3. Select `MyCache` as the associated Application Cache.
+ 3. Select `MyCache` as the associated Application Cache.
 
      Be aware that if you haven't created the Application Cache or it's still being provisioned the cache selection drop down won't appear.  Another way to associate the Application Cache with the application is with a [service binding in a deployment.json](http://docs.oracle.com/en/cloud/paas/app-container-cloud/dvcjv/creating-meta-data-files.html) file.
 
-  4. Click 'Create' to upload the application archive and deploy an instance of the example--that's it!
+ 4. Click 'Create' to upload the application archive and deploy an instance of the example--that's it!
 
      If you prefer to work on the command line instead of using the web console, you can also use CURL with the [ACCS REST API](http://docs.oracle.com/en/cloud/paas/app-container-cloud/apcsr/index.html) to create and fully manage the lifecycle of an application.
 
