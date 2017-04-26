@@ -48,36 +48,33 @@ Build the Java client by running these commands:
    ```
 
    If you wish to create a 'shaded' jar, run this command:
-  
+
    ```
    mvn clean install -DskipTests -P shade
    ```
-    
+
 ## Running the examples
 
-The sub-project cache-client-examples contains an example client that uses 
-the client API.
+The directory ``cache-client-examples`` contains two sub-projects that show how to use the client API.
 
-Change to the `cache-client-examples` directory and run the following command to build the examples:
+### Deployable ACCS example
 
+The sub-directory ``cache-client-examples/appcache-example`` contains an example using the client API which can be deployed to ACCS.
 
-   ```
-   mvn clean install
-   ```
+See [the README](appcache-example/README.md) for full instructions on how to build and deploy this example.
 
-Issue the following to run the example using the LocalSessionProvider, which runs 
-the full API against a local/in-memory cache.
+### LocalSessionProvider Example
 
+The sub-directory  ```cache-client-examples/local-session-provider-example``` contains an example showing how to use the
+the client API against a LocalSessionProvider without having to deploy to ACCS.
 
-   ```
-   mvn exec:exec
-   ```
-     
+See [the README](local-session-provider-example/README.md) for full instructions on how to build and run this example.
+
 ## Referencing the API from Maven Projects
-       
+
 To add a dependency on the cache-client-api in your Maven projects, include
        this dependency.
-       
+
        ```
         <dependency>
             <groupId>com.oracle.cloud.caching</groupId>
@@ -85,10 +82,8 @@ To add a dependency on the cache-client-api in your Maven projects, include
             <version>1.0.0</version>
         </dependency>
        ```
-  
+
 ## Further Information
-       
-For further information on using the JAVA API within your ACCS applications, see 
+
+For further information on using the JAVA API within your ACCS applications, see
        the [Oracle Cloud Documentation](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CACHE-GUID-9E86E21F-E84C-4F2D-B101-FD461C8A0455).
-       
-       
