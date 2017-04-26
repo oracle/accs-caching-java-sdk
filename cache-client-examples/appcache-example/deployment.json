@@ -1,0 +1,13 @@
+{
+  "memory": "1G",
+  "instances": 1,
+  "services": [
+    {
+      "name": "MyCache",
+      "type": "caching"
+    }
+  ],
+  "environment": {
+    "CACHE_PROTOCOL": "GPRS"
+  }
+}
