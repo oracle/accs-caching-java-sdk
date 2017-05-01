@@ -64,7 +64,7 @@ The sub-directory [``cache-client-examples/appcache-example``](cache-client-exam
 ### LocalSessionProvider Example
 
 The sub-directory  [``cache-client-examples/local-session-provider-example``](cache-client-examples/local-session-provider-example) contains an example showing how to use the
-the client API against a LocalSessionProvider without having to deploy to ACCS.
+the client API (including full API functionality) against a LocalSessionProvider without having to deploy to ACCS.
 
 ## Referencing the API from Maven Projects
 
