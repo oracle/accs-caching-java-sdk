@@ -114,59 +114,85 @@ To keep things simple I'll use CURL to interact with the deployed example.  To c
 
 From this we can see we'll need to pass two query parameters, `name` and `email`.  In a terminal window try the following, substituting your application URL in place of mine:
 
-    $ curl -i -X POST https://CacheDemo-paas104.apaas.em2.oraclecloud.com/users?name=mark\&email=twain@riverboat.org
+    $ curl -i -X POST https://CacheDemo-paas104.apaas.us2.oraclecloud.com/users?name=mark\&email=twain@riverboat.org
 
 When I run this I get a 200 response with a JSON version of the created User object that has been placed into the cache:
 
-	HTTP/1.1 200 OK
-	Date: Wed, 19 Apr 2017 19:46:16 GMT
-	Content-Type: application/json
-	Transfer-Encoding: chunked
-	Server: Jetty(9.3.6.v20151106)
+    HTTP/1.1 200 OK
+    Server: Jetty(9.3.z-SNAPSHOT)
+    Date: Mon, 01 May 2017 20:18:15 GMT
+    Content-type: application/json
+    Via: 1.1 net-apaasotd
+    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
+    Transfer-encoding: chunked
 
-	{"id":"74ca1448-73f3-41f5-bb11-fda54c9dff1f","name":"mark","email":"twain@riverboat.org"}scripts$
+    {"id":"92e7d5f0-6919-4f72-9f85-e8b01dedc770","name":"mark","email":"twain@riverboat.org"}
+
+Just to confirm the creation succeeded, we can do a GET for the user with the id that was returned by the POST:
+
+    $ curl -i -X GET https://CacheDemo-paas104.apaas.us2.oraclecloud.com/users/92e7d5f0-6919-4f72-9f85-e8b01dedc770
+
+    HTTP/1.1 200 OK
+    Server: Jetty(9.3.z-SNAPSHOT)
+    Date: Mon, 01 May 2017 20:18:50 GMT
+    Content-type: application/json
+    Via: 1.1 net-apaasotd
+    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
+    Transfer-encoding: chunked
+
+    {"id":"92e7d5f0-6919-4f72-9f85-e8b01dedc770","name":"mark","email":"twain@riverboat.org"}
+
+Looks good! The user is definitely in the cache.
 
 ### Updating a User
 
 Try the following (substituting the id of the User you just created) to update the created User's name and email (remember this is a *simple* example so it's not very sophisticated):
 
-    $ curl -i -X PUT https://CacheDemo-paas104.apaas.em2.oraclecloud.com/users/74ca1448-73f3-41f5-bb11-fda54c9dff1f?name=luke\&email=luke@rebellion.org
+    $ curl -i -X PUT https://CacheDemo-paas104.apaas.us2.oraclecloud.com/users/92e7d5f0-6919-4f72-9f85-e8b01dedc770?name=luke\&email=luke@rebellion.org
 
-Output:
+Results in a 200 and the updated user is displayed:
 
-	HTTP/1.1 200 OK
-	Date: Wed, 19 Apr 2017 19:47:23 GMT
-	Content-Type: application/json
-	Transfer-Encoding: chunked
-	Server: Jetty(9.3.6.v20151106)
+    HTTP/1.1 200 OK
+    Server: Jetty(9.3.z-SNAPSHOT)
+    Date: Mon, 01 May 2017 20:21:04 GMT
+    Content-type: application/json
+    Via: 1.1 net-apaasotd
+    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
+    Transfer-encoding: chunked
 
-	{"id":"74ca1448-73f3-41f5-bb11-fda54c9dff1f","name":"luke","email":"luke@rebellion.org"}
+    {"id":"92e7d5f0-6919-4f72-9f85-e8b01dedc770","name":"luke","email":"luke@rebellion.org"}
 
 ### Deleting a User
 
 Let's DELETE the user from the cache (which returns the deleted User object):
 
-	$ curl -i -X DELETE http://CacheDemo-paas104.apaas.em2.oraclecloud.com/users/74ca1448-73f3-41f5-bb11-fda54c9dff1f
+    $ curl -i -X DELETE https://CacheDemo-paas104.apaas.us2.oraclecloud.com/users/92e7d5f0-6919-4f72-9f85-e8b01dedc770
 
-	HTTP/1.1 200 OK
-	Date: Wed, 19 Apr 2017 19:48:13 GMT
-	Content-Type: application/json
-	Transfer-Encoding: chunked
-	Server: Jetty(9.3.6.v20151106)
+    HTTP/1.1 200 OK
+    Server: Jetty(9.3.z-SNAPSHOT)
+    Date: Mon, 01 May 2017 20:23:07 GMT
+    Content-type: application/json
+    Via: 1.1 net-apaasotd
+    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
+    Transfer-encoding: chunked
 
-	{"id":"74ca1448-73f3-41f5-bb11-fda54c9dff1f","name":"luke","email":"luke@rebellion.org"}scripts$
+    {"id":"92e7d5f0-6919-4f72-9f85-e8b01dedc770","name":"luke","email":"luke@rebellion.org"}
 
 And just to confirm the deletion let's GET the User:
 
-	$ curl -i -X GET http://CacheDemo-paas104.apaas.em2.oraclecloud.com/users/74ca1448-73f3-41f5-bb11-fda54c9dff1f
+    $ curl -i -X GET https://CacheDemo-paas104.apaas.us2.oraclecloud.com/users/92e7d5f0-6919-4f72-9f85-e8b01dedc770
 
 Which results in a 404 error as it's no longer in the cache.
 
-	HTTP/1.1 404 Not Found
-	Date: Wed, 19 Apr 2017 19:48:23 GMT
-	Content-Type: application/json
-	Transfer-Encoding: chunked
-	Server: Jetty(9.3.6.v20151106)
+    HTTP/1.1 404 Not Found
+    Server: Jetty(9.3.z-SNAPSHOT)
+    Date: Mon, 01 May 2017 20:23:12 GMT
+    Content-type: application/json
+    Via: 1.1 net-apaasotd
+    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
+    Transfer-encoding: chunked
+
+    {"message":"No user with id \u002792e7d5f0-6919-4f72-9f85-e8b01dedc770\u0027 found"}
 
 Developing Locally
 ------------------
