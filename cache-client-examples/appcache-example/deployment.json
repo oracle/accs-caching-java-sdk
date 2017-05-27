@@ -8,6 +8,6 @@
     }
   ],
   "environment": {
-    "CACHE_PROTOCOL": "GPRS"
+    "CACHE_PROTOCOL": "GRPC"
   }
 }
