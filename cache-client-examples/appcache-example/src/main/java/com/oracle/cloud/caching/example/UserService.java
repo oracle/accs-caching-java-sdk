@@ -11,7 +11,7 @@ import com.oracle.cloud.cache.basic.options.Transport;
 public class UserService extends AbstractUserService {
 	
 	private static final String CACHE_HOST = System.getenv("CACHING_INTERNAL_CACHE_URL");
-	private static final Optional<String> CACHE_PROTOCOL = Optional.ofNullable(System.getenv("CACHING_PROTOCOL"));
+	private static final Optional<String> CACHE_PROTOCOL = Optional.ofNullable(System.getenv("CACHE_PROTOCOL"));
 
 	public UserService() {
 		super();
