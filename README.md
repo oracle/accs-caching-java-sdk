@@ -1,5 +1,7 @@
 # Java Client Caching SDK for Oracle Application Container Cloud Service
 
+[![Build Status](https://travis-ci.org/oracle/accs-caching-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/accs-caching-java-sdk)
+
 This project contains the source code for the Java client library  
 to allow apps access caches in the Application Container Cloud Service (ACCS) of Oracle's Cloud Platform.
 
