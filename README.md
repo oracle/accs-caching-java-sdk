@@ -1,22 +1,23 @@
-# Application Container Cloud Service Application Cache Java API
+# Java Client Caching SDK for Oracle Application Container Cloud Service
 
 This project contains the source code for the Java client library  
-to allow applications access caches in the Application Container Cloud Service (ACCS).
+to allow apps access caches in the Application Container Cloud Service (ACCS) of Oracle's Cloud Platform.
 
-To create an Application Cache, see the [Oracle Cloud Documentation](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CACHE-GUID-9E86E21F-E84C-4F2D-B101-FD461C8A0455)
+To create an Application Cache, see the [documentation](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CACHE-GUID-9E86E21F-E84C-4F2D-B101-FD461C8A0455)
 
 ## Prerequisites
 
 Install these before building the Java client library:
 
-1. Java 8 SE Development Kit or Runtime environment
+1. Java SE Development Kit (JDK)
 
-     - [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-     - [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+     - [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+     - Install the latest Java SE JDK available
 
 2. Maven 3.2.5 or above installed and configured
 
-   - https://maven.apache.org/download.git
+   - [Download instructions](https://maven.apache.org/download.cgi)
+   - [Installation instructions](https://maven.apache.org/install.html)
 
 
 ## Build Instructions
@@ -81,5 +82,15 @@ To add a dependency on the cache-client-api in your Maven projects, include
 
 ## Further Information
 
-For further information on using the JAVA API within your ACCS applications, see
-       the [Oracle Cloud Documentation](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CACHE-GUID-9E86E21F-E84C-4F2D-B101-FD461C8A0455).
+For further information on using the Java API within your applications deployed on ACCS, see 
+the [documentation](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CACHE-GUID-9E86E21F-E84C-4F2D-B101-FD461C8A0455).
+
+# <a name="contrib"></a> Contributing
+
+This is an open source project and we welcome contributions. See [CONTRIBUTING](./CONTRIBUTING.md) for details.
+
+# <a name="license"></a> License
+
+You may not use the identified files except in compliance with the Universal Permissive License (UPL), Version 1.0 (the "License.")
+
+You may obtain a copy of the License at https://opensource.org/licenses/UPL. A copy of the license is also reproduced in [LICENSE.md](./LICENSE.md)
