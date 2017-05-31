@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk8
 sudo: false
-script: mvn clean verify
+script: mvn clean verify && cd cache-client-examples/local-session-provider-example/ && mvn clean install && mvn exec:exec
