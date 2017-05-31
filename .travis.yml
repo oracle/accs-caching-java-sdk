@@ -1,5 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      - oracle-java8-set-default
 sudo: false
 script: mvn clean verify && cd cache-client-examples/local-session-provider-example/ && mvn clean install && mvn exec:exec
