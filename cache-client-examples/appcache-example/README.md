@@ -26,7 +26,7 @@ My assumption is that you're familiar with the features of the Application Cache
 
 * [Using Caches in Oracle Application Container Cloud Service](http://docs.oracle.com/en/cloud/paas/app-container-cloud/cache/index.html)
 * Tutorial: [Create a Java application using the Caching REST API in Oracle Application Container Cloud Service](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/apaas/java/java-accs-caching-basic/java-accs-caching-basic.html)
-* Tutorial: [Creating a Node.js Application Using the Caching REST API in Oracle Application Container Cloud Service](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/apaas/node/node-accs-caching-basic/node-accs-caching.html#overview)
+* Tutorial: [Creating a Node.js Application Using the Caching REST API in Oracle Application Container Cloud Service](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/apaas/node/node-accs-caching-basic/node-accs-caching-basic.html)
 
 
 Cache API Basics
