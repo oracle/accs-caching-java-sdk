@@ -32,7 +32,7 @@
         A Java Client API to access Oracle Application Container Cloud Service (ACCS) Application Cache.
     </description>
 
-    <url>https://github.com/oracle/accs-caching/</url>
+    <url>https://github.com/oracle/accs-caching-java-sdk/</url>
 
     <licenses>
         <license>
@@ -56,9 +56,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/oracle/accs-caching.git</connection>
-        <developerConnection>scm:git:https://github.com/oracle/accs-caching.git</developerConnection>
-        <url>https://github.com/oracle/accs-caching.git</url>
+        <connection>scm:git:https://github.com/oracle/accs-caching-java-sdk.git</connection>
+        <developerConnection>scm:git:https://github.com/oracle/accs-caching-java-sdk.git</developerConnection>
+        <url>https://github.com/oracle/accs-caching-java-sdk.git</url>
         <tag>accs-caching-1.0.0</tag>
     </scm>
 
